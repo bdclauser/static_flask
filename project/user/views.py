@@ -1,11 +1,10 @@
-from flask import render_template, Blueprint, url_for, redirect, flash, request
-from flask.ext.login import login_user, logout_user, login_required, current_user
-
-from project.models import User
+from flask import (Blueprint, current_user, flash, login_required, login_user,
+                   logout_user, redirect, render_template, request, url_for)
+from project import bcrypt, db
 from project.email import send_email
-from project import db, bcrypt
-from .forms import LoginForm, RegisterForm, ChangePasswordForm
+from project.models import User
 
+from .forms import ChangePasswordForm, LoginForm, RegisterForm
 
 # Config
 
