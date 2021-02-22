@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Route for handling the login page logic
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    print db
+    print(db)
     form = LoginForm()
     error = None
     if request.method == 'POST':
@@ -18,14 +18,6 @@ def login():
             return redirect(url_for('home'))
     return render_template('login.html', error=error)
 
-@login_manager.user_loader
-def user_loader(user_id):
-    """Given *user_id*, return the associated User object.
-
-    :param unicode user_id: user_id (email) user to retrieve
-
-    """
-    return User.query.get(user_id)
     
 # This starts the server with the 'run()' method
 if __name__ == '__main__':

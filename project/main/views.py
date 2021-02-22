@@ -11,9 +11,9 @@ main_blueprint = Blueprint('main', __name__,)
 @main_blueprint.route('/')
 @login_required
 def home():
-    return rendere_template('main/index.html')
+    return render_template('main/index.html')
 
 
 @app.route('/welcome')  # home/welcome
 def welcome():
-    return render_template('welcome.html')  # renders welcome.html
+    return render_template('main/welcome.html')  # renders welcome.html

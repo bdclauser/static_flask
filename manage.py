@@ -5,9 +5,8 @@ import coverage
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 
-import app
-import db
-from models import User
+from project import app, db
+from project.models import User
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 

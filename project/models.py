@@ -1,6 +1,5 @@
 import datetime
-import db
-import bcrypt
+from project import db, bcrypt
 
 
 class User(db.Model):

@@ -2,7 +2,7 @@ import unittest
 from flask import current_app
 from flask.ext.testing import TestCase
 
-import app
+from project import app
 
 
 class TestTestingConfig(TestCase):
