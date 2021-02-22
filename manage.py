@@ -61,3 +61,14 @@ def create_db():
 def drop_db():
     """Drops the table, you know that one thing they said never to do..."""
     db.drop_all()
+
+
+@mananger.command
+def create_admin():
+    """Creates the admin user"""
+    db.session.add(User("admin", "admin"))
+    db.session.commit()
+
+
+if __name__ == '__main__':
+    manager.run
