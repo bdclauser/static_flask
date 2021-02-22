@@ -5,15 +5,6 @@ app = Flask(__name__)
 # After importing Flask this then creates the object, defines the views, and starts the server.
 
 
-@app.route('/')  # home
-def home():
-    return "Hello, World! Hey!"
-
-
-@app.route('/welcome')  # home/welcome
-def welcome():
-    return render_template('welcome.html')  # renders welcome.html
-
 # Route for handling the login page logic
 @app.route('/login', methods=['GET', 'POST'])
 def login():
