@@ -7,7 +7,7 @@ from flask.ext.migrate import Migrate, MigrateCommand
 
 import app
 import db
-import User
+from models import User
 
 app.config.from_object(os.environ['APP_SETTINGS'])
 
@@ -32,7 +32,7 @@ def test():
 @manager.command
 def cov():
     """Runs the unti tests with coverage."""
-    cov = covereage.coverage(branch=True, include="project/*")
+    cov = covereage.coverage(branch=True, include="*")
 
     # TODO: Need to update branch path
 
@@ -71,4 +71,4 @@ def create_admin():
 
 
 if __name__ == '__main__':
-    manager.run
+    manager.run()
